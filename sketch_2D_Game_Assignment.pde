@@ -11,6 +11,24 @@ ArrayList<Arrow>arrows = new ArrayList<Arrow>();
 ArrayList<Bird>birds = new ArrayList<Bird>();
 ArrayList<SlicedApples>slicedApples = new ArrayList<SlicedApples>(); //initialises the ArrayLists of images to use during gameplay
 
+float bowX() {
+  return width / 9.0f;
+}
+
+float bowY() {
+  return height - 100;
+}
+
+float aimTowardMouse() {
+  return atan2(mouseY - bowY(), mouseX - bowX());
+}
+
+// Tune this until the bow sprite points at the cursor (try 0, PI/2, -PI/2, PI)
+final float BOW_SPRITE_OFFSET = PI / 4;
+
+float bowDrawAngle() {
+  return aimTowardMouse() + BOW_SPRITE_OFFSET;
+}
 
 public void setup() {
   size(1000, 700); //sets the screen size
@@ -56,7 +74,12 @@ public void draw() {
   
   else if (gameState == States.PLAY) {
     loadBackground(); //calls the appropriate subroutine defined outside of void setup() and void draw()
-    image(bowAndArrow, width/9, height-100);
+    pushMatrix();
+    translate(bowX(), bowY());
+    rotate(bowDrawAngle());
+    image(bowAndArrow, 0, 0);
+    popMatrix();
+
     image(basket, width/2, height-75);
     
     
@@ -268,7 +291,7 @@ public void mouseClicked() {
     gameState = States.PLAY;
     resetValues();
   }
-  else if(gameState == States.PLAY){
-      arrows.add(new Arrow(width/10, height-100));
+  else if (gameState == States.PLAY) {
+    arrows.add(new Arrow(bowX(), bowY(), aimTowardMouse()));
   }
 }

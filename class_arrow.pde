@@ -1,33 +1,31 @@
-class Arrow{
-  
-  float x, y, speedX, speedY, angleX, angleY, angle;
+class Arrow {
+  float x, y;
   float speed = 17;
+  float flightAngle;   // direction of travel (toward mouse)
+  float drawAngle;     // arrow sprite rotation
   PImage arrow;
-  double direction; //set the member variables for the Arrow class
-  
-  Arrow(float x, float y){
+
+  Arrow(float x, float y, float flightAngle) {
     this.x = x;
     this.y = y;
-    this.setDirection();
-    
+    this.flightAngle = flightAngle;
+    this.drawAngle = flightAngle + PI / 4;
     arrow = loadImage("arrow.png");
-    arrow.resize(120,120); //define the constructor for the Arrow class
+    arrow.resize(120, 120);
   }
-  
-  public void render(){
-    image(arrow,x,y);
+
+  public void render() {
+    pushMatrix();
+    translate(x, y);
+    rotate(drawAngle);
+    image(arrow, 0, 0);
+    popMatrix();
   }
-  
-  public void setDirection(){
-    speedX = mouseX-x;
-    speedY = mouseY-y;
-    direction = Math.atan2(speedY, speedX);
-  } //cause an arrow to shoot in the direction of the mouse cursor
-  
-  public void move(){
-    x += speed*Math.cos(direction);
-    y += speed*Math.sin(direction);
-  } //cause an arrow to move at the speed given
+
+  public void move() {
+    x += speed * cos(flightAngle);
+    y += speed * sin(flightAngle);
+  }
   
   public void update(){
     render();
@@ -47,7 +45,4 @@ class Arrow{
     }
     return false;
   } //create collision mechanisms for the arrow with the WormApples, HealthyApples and Birds classes
-    
-  
-  
 }
