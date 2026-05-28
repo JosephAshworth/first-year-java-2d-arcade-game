@@ -23,7 +23,7 @@ float aimTowardMouse() {
   return atan2(mouseY - bowY(), mouseX - bowX());
 }
 
-// Tune this until the bow sprite points at the cursor (try 0, PI/2, -PI/2, PI)
+// make the bow sprite point at the cursor
 final float BOW_SPRITE_OFFSET = PI / 4;
 
 float bowDrawAngle() {
