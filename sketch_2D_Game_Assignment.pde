@@ -48,7 +48,11 @@ public void setup() {
   cursorCross = loadImage("cursorcross.png");
   cursorCross.resize(75, 75);
   
-  HighScore = loadStrings("HighScore.txt"); //saves the HighScore text file to the HighScore String array variable
+  HighScore = loadStrings(sketchPath("HighScore.txt")); //saves the HighScore text file to the HighScore String array variable
+  if (HighScore == null) {
+    HighScore = new String[]{"0"};
+    saveStrings(sketchPath("HighScore.txt"), HighScore);
+  }
   
 }
 
@@ -269,7 +273,7 @@ public void destroyWormApples(){
 public void updateHighScore(){
   if(parseInt(HighScore[0])<score){
     HighScore[0] = str(score);
-    saveStrings("HighScore.txt", HighScore);
+    saveStrings(sketchPath("HighScore.txt"), HighScore);
   }
 } //if the player's score is greater than the saved high score, update the high score with the player's score
 
