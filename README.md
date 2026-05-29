@@ -72,11 +72,11 @@ Please follow the instructions below for your operating system, to work around t
 ### Linux
 
 1. Download and extract the correct Linux folder from Dropbox.
-2. **Right-click** the Unix executable file and click **Copy**.
+2. **Right-click** the Unix executable file (which has no extension) and click **Copy**.
 3. Open **Terminal** and **paste** the file, press **Enter**.
     Example after paste:
    ```bash
-   '/Users/YourName/Downloads/macos-aarch64/sketch_2D_Game_Assignment (2) (1) (1) (1) (1)(123) copy.app'
+   '/Users/YourName/Downloads/macos-aarch64/sketch_2D_Game_Assignment (2) (1) (1) (1) (1)(123) copy'
 
 
 ### Windows
