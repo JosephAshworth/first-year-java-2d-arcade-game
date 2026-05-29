@@ -72,7 +72,7 @@ Please follow the instructions below for your operating system, to work around t
 ### Linux
 
 1. Download and extract the correct Linux folder from Dropbox.
-2. **Right-click** the **`.app`** file and click **Copy**.
+2. **Right-click** the Unix executable file and click **Copy**.
 3. Open **Terminal** and **paste** the file, press **Enter**.
     Example after paste:
    ```bash
