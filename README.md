@@ -36,7 +36,7 @@ Your score is the number of healthy apples that reach the basket. High scores ar
 
 # Play without Processing (standalone download)
 
-You can play the game **without installing Processing** by downloading the exported build for your computer from Dropbox: **[Download export folders (all platforms)](https://www.dropbox.com/scl/fo/to4o6culzbosc8crje6rn/AC15FQSjidtnepShs2UeEWs?rlkey=60slm2cay28ejwf163hy78b8c&st=6trdd2er&dl=0)**
+You can play the game **without installing Processing** by downloading the exported build for your computer from **[Dropbox](https://www.dropbox.com/scl/fo/to4o6culzbosc8crje6rn/AC15FQSjidtnepShs2UeEWs?rlkey=60slm2cay28ejwf163hy78b8c&st=6trdd2er&dl=0)**
 
 
 
